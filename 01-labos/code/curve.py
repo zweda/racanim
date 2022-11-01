@@ -212,22 +212,20 @@ def on_draw():
 
     """    
     ROTATION 1
-    
+    """
     tangent = get_dt(t_values[current_t_idx], anchor_points[current_segment_idx:current_segment_idx + 4])
     roatation_axis = calculate_rotation_axis(tangent)
     angle = get_angle(current_rotation_axis, tangent)
     glRotatef(angle, *roatation_axis)
     draw_object()
-    """
 
     """
     ROATATION 2
     
-    """
     glScalef(100, 100,  100)
     dcm = calculate_rotation_matrix()
-    print(dcm)
     draw_object(dcm)
+    """
 
 
 if __name__ == '__main__':
